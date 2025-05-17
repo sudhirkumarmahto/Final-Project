@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-file-alt"></i> Resume Builder</h1>
+            <p>Create a professional resume in minutes</p>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <h2><i class="fas fa-pencil-alt"></i> Enter Your Information</h2>
+                <form id="resumeForm">
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Personal Information</h3>
+                        <div class="form-group">
+                            <label for="fullName"><i class="fas fa-user-circle"></i> Full Name</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" id="email" name="email" placeholder="johndoe@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone"></i> Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address"><i class="fas fa-map-marker-alt"></i> Address</label>
+                            <input type="text" id="address" name="address" placeholder="City, State, Country">
+                        </div>
+                        <div class="form-group">
+                            <label for="summary"><i class="fas fa-info-circle"></i> Professional Summary</label>
+                            <textarea id="summary" name="summary" rows="4" placeholder="A brief summary of your professional background and career goals"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <div id="educationEntries">
+                            <div class="education-entry">
+                                <div class="form-group">
+                                    <label for="institution"><i class="fas fa-university"></i> Institution</label>
+                                    <input type="text" class="institution" name="institution" placeholder="University Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="degree"><i class="fas fa-scroll"></i> Degree</label>
+                                    <input type="text" class="degree" name="degree" placeholder="Bachelor of Science">
+                                </div>
+                                <div class="form-group">
+                                    <label for="eduStartDate"><i class="fas fa-calendar-alt"></i> Start Date</label>
+                                    <input type="month" class="eduStartDate" name="eduStartDate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="eduEndDate"><i class="fas fa-calendar-check"></i> End Date</label>
+                                    <input type="month" class="eduEndDate" name="eduEndDate">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" id="addEducation" class="btn-add">Add Education</button>
+                    </div>
+
+                    <!-- Work Experience -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+                        <div id="experienceEntries">
+                            <div class="experience-entry">
+                                <div class="form-group">
+                                    <label for="company"><i class="fas fa-building"></i> Company</label>
+                                    <input type="text" class="company" name="company" placeholder="Company Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="position"><i class="fas fa-id-badge"></i> Position</label>
+                                    <input type="text" class="position" name="position" placeholder="Job Title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="expStartDate"><i class="fas fa-calendar-alt"></i> Start Date</label>
+                                    <input type="month" class="expStartDate" name="expStartDate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="expEndDate"><i class="fas fa-calendar-check"></i> End Date</label>
+                                    <input type="month" class="expEndDate" name="expEndDate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="responsibilities"><i class="fas fa-tasks"></i> Responsibilities</label>
+                                    <textarea class="responsibilities" name="responsibilities" rows="3" placeholder="Describe your main responsibilities and achievements"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" id="addExperience" class="btn-add">Add Experience</button>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-star"></i> Skills</h3>
+                        <div class="form-group">
+                            <label for="skills"><i class="fas fa-tools"></i> Skills (separate with commas)</label>
+                            <input type="text" id="skills" name="skills" placeholder="HTML, CSS, JavaScript...">
+                        </div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-generate">Generate Resume</button>
+                        <button type="reset" class="btn-reset">Reset Form</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="preview-container" id="resumePreview">
+                <div class="preview-actions">
+                    <button id="downloadPdf" class="btn-download">Download PDF</button>
+                </div>
+                <div id="resumeTemplate" class="resume-template">
+                    <!-- Resume template will be populated with JavaScript -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Resume Builder. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
